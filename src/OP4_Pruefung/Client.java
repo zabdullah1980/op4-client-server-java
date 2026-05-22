@@ -7,6 +7,8 @@ public class Client {
 
     public static void main(String[] args) {
 
+        boolean useJson = true; // ✅ نفس السيرفر (مهم جداً)
+
         System.out.println("Client erfolgreich gestartet...");
 
         try (Socket socket = new Socket("localhost", 5000);
@@ -14,21 +16,49 @@ public class Client {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader console = new BufferedReader(new InputStreamReader(System.in))) {
 
-
-            String line;
             System.out.println("Auftrag erfolgreich erhalten:");
 
-            while (!(line = in.readLine()).equals("END")) {
-                System.out.println(line);
+            String line;
+
+            if (useJson) {
+
+                // ✅ Version 2: JSON
+                StringBuilder jsonBuilder = new StringBuilder();
+
+                while (!(line = in.readLine()).equals("END")) {
+                    jsonBuilder.append(line);
+                }
+
+                String json = jsonBuilder.toString();
+
+                // ✅ تحويل بسيط
+                json = json.replace("{", "")
+                        .replace("}", "")
+                        .replace("\"", "");
+
+                String[] parts = json.split(",");
+
+                System.out.println("📦 Mission Data:");
+                for (String part : parts) {
+                    System.out.println(part.trim());
+                }
+
+            } else {
+
+                // ✅ Version 1: Text
+                while (!(line = in.readLine()).equals("END")) {
+                    System.out.println(line);
+                }
             }
 
-
+            // ✅ إدخال الكود
             System.out.print("Geben Sie den Code ein: ");
             String code = console.readLine();
 
-
+            // ✅ إرسال الكود
             out.println(code);
 
+            // ✅ استقبال الرد
             String response = in.readLine();
             System.out.println("Server Antwort: " + response);
 
