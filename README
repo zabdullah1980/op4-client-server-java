@@ -1,0 +1,14 @@
+Java Client-Server Application
+
+This project demonstrates a simple client-server communication using Java sockets.
+
+Technologies:
+- Java
+- Socket / ServerSocket
+- BufferedReader / PrintWriter
+
+Features:
+- Server sends a mission (Auftrag)
+- Client receives and displays it
+- Client sends back a code
+- Server verifies the code
