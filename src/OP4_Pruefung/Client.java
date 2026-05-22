@@ -7,7 +7,7 @@ public class Client {
 
     public static void main(String[] args) {
 
-        boolean useJson = true; // ✅ نفس السيرفر (مهم جداً)
+        boolean useJson = true;
 
         System.out.println("Client erfolgreich gestartet...");
 
@@ -31,7 +31,7 @@ public class Client {
 
                 String json = jsonBuilder.toString();
 
-                // ✅ تحويل بسيط
+
                 json = json.replace("{", "")
                         .replace("}", "")
                         .replace("\"", "");
@@ -51,14 +51,14 @@ public class Client {
                 }
             }
 
-            // ✅ إدخال الكود
+
             System.out.print("Geben Sie den Code ein: ");
             String code = console.readLine();
 
-            // ✅ إرسال الكود
+
             out.println(code);
 
-            // ✅ استقبال الرد
+
             String response = in.readLine();
             System.out.println("Server Antwort: " + response);
 
