@@ -1,30 +1,39 @@
 # Java Client-Server Application
 
-This project demonstrates a client-server communication system using Java sockets.
+This project demonstrates a client-server communication system using Java sockets with multi-client support.
 
 ## Technologies
 - Java
 - Socket / ServerSocket
 - BufferedReader / PrintWriter
 - JSON (for structured data communication)
+- Multithreading (Thread-per-client)
 
 ## Features
 - Server sends a mission (Auftrag)
 - Client receives and displays it
 - Client sends back a verification code
 - Server verifies the code
-- ✅ Supports both:
+- ✅ Supports:
   - Text-based communication
-  - JSON-based communication (new feature)
+  - JSON-based communication
+- ✅ Handles multiple clients simultaneously (Multi-Client Support)
+- ✅ Each client is processed in a separate thread
 
 ## Description
-The project was initially developed using simple text communication.  
-It was later improved by adding JSON-based communication to make the system more flexible and closer to real-world applications.
+The project was initially developed using simple text communication between a single client and the server.  
+
+It was later improved by adding:
+- JSON-based communication to structure the data
+- Multi-client support using threads, allowing the server to handle multiple connections at the same time
+
+This makes the system more flexible and closer to real-world networking applications.
 
 ## How to run
-1. Start Server.java
-2. Start Client.java
-3. Enter the code when prompted
+1. Start `Server.java`
+2. Start one or more instances of `Client.java`
+3. Each client will receive the mission
+4. Enter the verification code (e.g. 007 or 008)
 
-## Author
-Zaid Abdullah
+## Example Output
+``
