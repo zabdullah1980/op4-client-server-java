@@ -1,5 +1,6 @@
 # Java Client-Server Application
 
+✅ Updated: Added Multi-Client Support and JSON Communication
 This project demonstrates a client-server communication system using Java sockets with multi-client support.
 
 ## Technologies
