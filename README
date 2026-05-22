@@ -1,14 +1,30 @@
-Java Client-Server Application
+# Java Client-Server Application
 
-This project demonstrates a simple client-server communication using Java sockets.
+This project demonstrates a client-server communication system using Java sockets.
 
-Technologies:
+## Technologies
 - Java
 - Socket / ServerSocket
 - BufferedReader / PrintWriter
+- JSON (for structured data communication)
 
-Features:
+## Features
 - Server sends a mission (Auftrag)
 - Client receives and displays it
-- Client sends back a code
+- Client sends back a verification code
 - Server verifies the code
+- ✅ Supports both:
+  - Text-based communication
+  - JSON-based communication (new feature)
+
+## Description
+The project was initially developed using simple text communication.  
+It was later improved by adding JSON-based communication to make the system more flexible and closer to real-world applications.
+
+## How to run
+1. Start Server.java
+2. Start Client.java
+3. Enter the code when prompted
+
+## Author
+Zaid Abdullah
